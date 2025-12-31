@@ -1,0 +1,13 @@
+<tr>
+    <td colspan="5">
+        <form class="admin-form" hx-post="{% url 'edit_entry' entry.id %}" hx-target="closest tr" hx-swap="outerHTML">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <div class="button-group">
+                <button class="btn-primary" type="submit">Save</button>
+                <button class="btn-secondary" type="button" onclick="location.reload()">Cancel</button>
+            </div>
+        </form>
+    </td>
+</tr>
+

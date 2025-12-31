@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="glass-card">
+    <h2>Admin Dashboard</h2>
+    <form class="admin-form" hx-post="{% url 'admin_portal' %}" hx-on::after-request="this.reset()">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button class="btn-primary" type="submit">Save Entry</button>
+    </form>
+    
+    <div class="entries-list" hx-get="{% url 'admin_entries_list' %}" hx-trigger="entryChanged from:body, load">
+        {% include '_admin_entries_table.html' %}
+    </div>
+</div>
+{% endblock %}

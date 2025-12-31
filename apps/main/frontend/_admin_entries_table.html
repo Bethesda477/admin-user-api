@@ -1,0 +1,22 @@
+<h3>Existing Entries</h3>
+<table>
+    <thead>
+        <tr>
+            <th>Timestamp</th>
+            <th>Name</th>
+            <th>Shape</th>
+            <th>Color</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for entry in entries %}
+            {% include '_entry_row.html' %}
+        {% empty %}
+        <tr>
+            <td colspan="5" class="empty-message">No entries yet. Add one above!</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+

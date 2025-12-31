@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="glass-card">
+    <h2>Real-time Grid</h2>
+    <table>
+        <thead>
+            <tr><th>Timestamp</th><th>Name</th><th>Shapecolor</th></tr>
+        </thead>
+        <tbody hx-get="{% url 'table_rows' %}" hx-trigger="every 3s, load">
+            </tbody>
+    </table>
+</div>
+{% endblock %}

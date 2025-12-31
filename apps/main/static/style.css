@@ -1,0 +1,269 @@
+/* --- Global Reset & Modern Font --- */
+:root {
+    --primary: #6366f1;    /* Indigo accent */
+    --bg-gradient: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    --glass: rgba(255, 255, 255, 0.7);
+}
+
+body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: var(--bg-gradient);
+    min-height: 100vh;
+    margin: 0;
+    padding: 2rem;
+    color: #1f2937;
+}
+
+/* --- Navigation --- */
+nav {
+    margin-bottom: 2rem;
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+nav a {
+    text-decoration: none;
+    color: #4b5563;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+nav a:hover {
+    background: var(--glass);
+    color: var(--primary);
+}
+
+/* --- Glassmorphism Container --- */
+main {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.glass-card {
+    background: var(--glass);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+}
+
+/* --- Form Styling (Admin) --- */
+.admin-form {
+    display: grid;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.admin-form p { margin: 0; }
+
+input, select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.9);
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+input:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.2s;
+}
+
+.btn-primary:hover {
+    background: #4f46e5;
+    transform: translateY(-1px);
+}
+
+/* --- Modern Table (User Portal) --- */
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 8px; /* Spaced rows look more modern */
+}
+
+th {
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    color: #6b7280;
+    padding: 1rem;
+    text-align: left;
+}
+
+tr {
+    background: rgba(255, 255, 255, 0.5);
+    transition: all 0.3s ease;
+}
+
+tr:hover {
+    transform: scale(1.01);
+    background: rgba(255, 255, 255, 0.8);
+}
+
+td {
+    padding: 1rem;
+}
+
+td:first-child { border-radius: 12px 0 0 12px; font-weight: 600; font-family: monospace; }
+td:last-child { border-radius: 0 12px 12px 0; }
+
+/* --- HTMX Transitions --- */
+.htmx-added {
+    animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.delete-btn {
+    color: #ef4444;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* --- Shape Display Styles --- */
+.shape-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+}
+
+.shape {
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+}
+
+/* Triangle */
+.shape-triangle {
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 35px solid;
+    background: none !important;
+}
+
+/* Square */
+.shape-square {
+    width: 35px;
+    height: 35px;
+}
+
+/* Circle */
+.shape-circle {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+}
+
+/* Colors */
+.shape-color-red {
+    background-color: #ef4444;
+    border-bottom-color: #ef4444;
+}
+
+.shape-color-blue {
+    background-color: #3b82f6;
+    border-bottom-color: #3b82f6;
+}
+
+.shape-color-green {
+    background-color: #10b981;
+    border-bottom-color: #10b981;
+}
+
+.shape-color-yellow {
+    background-color: #fbbf24;
+    border-bottom-color: #fbbf24;
+}
+
+/* --- Admin Portal Button Styles --- */
+.btn-edit {
+    background: #6366f1;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-right: 0.5rem;
+    transition: background 0.2s;
+}
+
+.btn-edit:hover {
+    background: #4f46e5;
+}
+
+.btn-delete {
+    background: #ef4444;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-delete:hover {
+    background: #dc2626;
+}
+
+.btn-secondary {
+    background: #6b7280;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-secondary:hover {
+    background: #4b5563;
+}
+
+.entries-list {
+    margin-top: 2rem;
+}
+
+.entries-list h3 {
+    margin-bottom: 1rem;
+    color: #1f2937;
+}
+
+/* --- Inline style replacements --- */
+.empty-message {
+    text-align: center;
+    color: #6b7280;
+}
+
+.button-group {
+    display: flex;
+    gap: 0.5rem;
+}

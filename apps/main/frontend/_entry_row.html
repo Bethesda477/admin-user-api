@@ -1,0 +1,11 @@
+<tr>
+    <td>{{ entry.created_at|date:"G:i:s Y-m-d" }}</td>
+    <td>{{ entry.name }}</td>
+    <td>{{ entry.get_shape_display }}</td>
+    <td>{{ entry.get_color_display }}</td>
+    <td>
+        <button class="btn-edit" hx-get="{% url 'edit_entry' entry.id %}" hx-target="closest tr" hx-swap="outerHTML">Edit</button>
+        <button class="btn-delete" hx-delete="{% url 'delete_entry' entry.id %}" hx-confirm="Are you sure?">Delete</button>
+    </td>
+</tr>
+

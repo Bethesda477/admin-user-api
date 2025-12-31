@@ -1,0 +1,11 @@
+{% for entry in entries %}
+<tr>
+    <td>{{ entry.created_at|date:"G:i:s Y-m-d" }}</td>
+    <td>{{ entry.name }}</td>
+    <td>
+        <div class="shape-container">
+            <div class="shape shape-{{ entry.shape }} shape-color-{{ entry.color }}"></div>
+        </div>
+    </td>
+</tr>
+{% endfor %}
