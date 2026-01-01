@@ -509,3 +509,4 @@ web: gunicorn api.wsgi --log-file -
 ---
 
 This architecture provides a **simple, maintainable, and scalable** foundation for the application! 🚀
+
