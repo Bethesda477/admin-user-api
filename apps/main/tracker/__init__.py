@@ -1,3 +1,0 @@
-# Tracker app package
-
-
